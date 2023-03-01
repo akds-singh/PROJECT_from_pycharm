@@ -14,16 +14,24 @@ def turtle_random_move():
         if num == 3:
             return t.back(10)
 
-    color_list = ['gold', "medium spring green", 'chocolate', 'medium violet red', 'violet', 'bisque', 'dark salmon',
-                  'saddle brown',
-                  'sandy brown', 'light sky blue', 'navy']
+    def random_color():
+        r = round(random.random(), 2)
+        g = round(random.random(), 2)
+        b = round(random.random(), 2)
+        return r, g, b
+
+    # color_list = ['gold', "medium spring green", 'chocolate', 'medium violet red', 'violet', 'bisque', 'dark salmon',
+    #                   'saddle brown',
+    #                   'sandy brown', 'light sky blue', 'navy']
 
     # 1. make the turtle pen thick
     t.width(5)
 
     # 2. choose a random  a color
-    rand_color = random.choice(color_list)
+
+    rand_color = random_color()
     t.pencolor(rand_color)
+
     # 3. move the turtle forward
     t.speed('fastest')
     t.forward(10)
@@ -32,7 +40,8 @@ def turtle_random_move():
     random_turn()
 
 
-for _ in range(100):
+# Calling function turtle_random_move several times:
+for _ in range(1000):
     turtle_random_move()
 
 Screen().exitonclick()
