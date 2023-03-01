@@ -2,7 +2,7 @@ from turtle import Turtle, Screen
 import colorgram
 import random
 
-colors = colorgram.extract("pic_sample.jpg", 30)
+colors = colorgram.extract("pic1.jpeg", 30)
 
 list_of_colors = []
 for i in range(len(colors)):
